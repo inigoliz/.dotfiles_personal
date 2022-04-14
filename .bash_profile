@@ -1,5 +1,8 @@
 # GLOBAL BASH CONFIGURATIONS:
 
+# Regarding .bashrc:
+# when a "bash" command is run, .bashrc gets executed, and then this bash_profile file is executed.
+
 # read '~/<DOTFILES_LOCATION>/.bash_prompt' for the concrete bash style configurations
 # read '~/<DOTFILES_LOCATION>/.aliases' for the aliases set up
 
