@@ -1,0 +1,26 @@
+# FILE WITH THE ALIASES USED:
+
+# alias python=python3  # Se elimina dicho alias porque no dejaba acceder fácilmente a Python2.7
+ 
+alias cd..='cd ../'                            # Go back 1 directory level (for fast typers)
+alias ..='cd ../'                              # Go back 1 directory level
+alias ...='cd ../../'                          # Go back 2 directory levels
+alias .3='cd ../../../'                        # Go back 3 directory levels
+alias .4='cd ../../../../'                     # Go back 4 directory levels
+alias .5='cd ../../../../../'                  # Go back 5 directory levels
+alias .6='cd ../../../../../../'               # Go back 6 directory levels
+#alias sc='source /Users/tesla/OneDrive\ -\ Københavns\ Universitet/copenhague_master/venv_generalCPH/bin/activate; echo "Entorno General CPH activado"' # activar rápidamente el entorno virtual
+alias scq='source /Users/tesla/.venvironments/venv_Qiskit/bin/activate; echo "Entorno Qiskit activado"'
+alias de='deactivate'
+alias scr='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_rimirar/bin/activate; echo     "Entorno Rimirar activado"'
+
+# QHack Virtual Environments
+alias qhack='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_QHack/bin/activate; echo "QHack with Jupyter Venv"'
+alias bare_qhack='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_BareQHack/bin/activate; echo "Basic QHack Venv"'
+alias scs='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_Sandbox/bin/activate; echo "Sandbox Venv"'
+alias kgl='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_KaggleCrypto/bin/activate'; echo "Kaggle Crypto Venv activated"
+
+# For the Haskell course at Advance Programming:
+alias ghc='stack exec ghci -- -W'
+alias ghc_compile='stack ghc -- -W'
+alias prolog='swipl --traditional'
