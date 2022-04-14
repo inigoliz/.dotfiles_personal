@@ -9,3 +9,5 @@
   path = ~/.dotfiles_personal/.my_gitconfig
 ```
 
+**IMP:** Always push changes made locally to keep them sync here!
+
