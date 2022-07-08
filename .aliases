@@ -18,7 +18,6 @@ alias scr='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv
 alias qhack='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_QHack/bin/activate; echo "QHack with Jupyter Venv"'
 alias bare_qhack='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_BareQHack/bin/activate; echo "Basic QHack Venv"'
 alias scs='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_Sandbox/bin/activate; echo "Sandbox Venv"'
-alias kgl='source /Users/tesla/Mis\ Cosas/Programacion/python/venvironments/venv_KaggleCrypto/bin/activate'; echo "Kaggle Crypto Venv activated"
 
 # For the Haskell course at Advance Programming:
 alias ghc='stack exec ghci -- -W'
