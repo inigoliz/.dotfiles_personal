@@ -8,6 +8,7 @@
 [include]
   path = ~/.dotfiles_personal/.my_gitconfig
 ```
+5. Run `./.config_macos.sh` to config macOS settings.
 
 **IMP: Always push changes made locally to keep them in sync here!**
 
