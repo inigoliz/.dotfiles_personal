@@ -41,22 +41,11 @@ done;
 
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
-<<<<<<< HEAD
-        # Ensure existing Homebrew v1 completions continue to work
-        export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d";
-=======
->>>>>>> 161fd07 (.bash_profile reorganized)
         source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
 elif [ -f /etc/bash_completion ]; then
         source /etc/bash_completion;
 fi;
         
-<<<<<<< HEAD
-=======
-# Add brew from Homebrew to PATH
-#export PATH=/opt/homebrew/bin:$PATH;
-
->>>>>>> 161fd07 (.bash_profile reorganized)
 # Enables git autocompletion. Install with brew install git bash-completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
     # if not found in /usr/local/etc, try the brew --prefix location
@@ -81,10 +70,3 @@ complete -W "NSGlobalDomain" defaults;
 complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes SystemUIServer Terminal Twitter" killall;
         
 export BASH_SILENCE_DEPRECATION_WARNING=1
-
-<<<<<<< HEAD
-# Add brew from Homebrew to PATH
-export PATH=/opt/homebrew/bin:$PATH
-=======
-
->>>>>>> 161fd07 (.bash_profile reorganized)
