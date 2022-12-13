@@ -1,13 +1,13 @@
 # GLOBAL BASH CONFIGURATIONS:
 
+# -------------------------------------------- Basic Info ----------------------------------------------------
+
 # Regarding .bashrc:
 # when a "bash" command is run, .bashrc gets executed, and then this bash_profile file is executed.
+# check '~/<DOTFILES_LOCATION>/.bash_prompt' for the concrete bash style configurations
+# check '~/<DOTFILES_LOCATION>/.aliases' for the aliases set up
 
-# read '~/<DOTFILES_LOCATION>/.bash_prompt' for the concrete bash style configurations
-# read '~/<DOTFILES_LOCATION>/.aliases' for the aliases set up
-
-# Add '~/bin' to the '$PATH'
-export PATH="$HOME/bin:$PATH";
+# ------------------------------------------ Other .dotfiles --------------------------------------------------
 
 # Load the shell dotfiles, and then some:
 # * ~/.path can be used to extend `$PATH`.
@@ -17,12 +17,18 @@ for file in ~/.dotfiles_personal/.{path,bash_prompt_style,exports,aliases,functi
 done;
 unset file;
 
+# -------------------------------------------- PATH Setup ----------------------------------------------------
+
+# Add '~/bin' to the '$PATH'
+export PATH="$HOME/bin:$PATH";
+export PATH="/opt/homebrew/bin:$PATH";
+
+# ------------------------------------------ Extra Settings ---------------------------------------------------
+
 # Case-insensitive name expansion (globbing) (used in pathname expansion)
 shopt -s nocaseglob;
-
 # Append to the Bash history file, rather than overwriting it
 shopt -s histappend;
-
 # Autocorrect typos in path names when using `cd`
 shopt -s cdspell;
 
@@ -35,13 +41,22 @@ done;
 
 # Add tab completion for many Bash commands
 if which brew &> /dev/null && [ -r "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]; then
+<<<<<<< HEAD
         # Ensure existing Homebrew v1 completions continue to work
         export BASH_COMPLETION_COMPAT_DIR="$(brew --prefix)/etc/bash_completion.d";
+=======
+>>>>>>> 161fd07 (.bash_profile reorganized)
         source "$(brew --prefix)/etc/profile.d/bash_completion.sh";
 elif [ -f /etc/bash_completion ]; then
         source /etc/bash_completion;
 fi;
         
+<<<<<<< HEAD
+=======
+# Add brew from Homebrew to PATH
+#export PATH=/opt/homebrew/bin:$PATH;
+
+>>>>>>> 161fd07 (.bash_profile reorganized)
 # Enables git autocompletion. Install with brew install git bash-completion
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion || {
     # if not found in /usr/local/etc, try the brew --prefix location
@@ -67,5 +82,9 @@ complete -o "nospace" -W "Contacts Calendar Dock Finder Mail Safari iTunes Syste
         
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
+<<<<<<< HEAD
 # Add brew from Homebrew to PATH
 export PATH=/opt/homebrew/bin:$PATH
+=======
+
+>>>>>>> 161fd07 (.bash_profile reorganized)
