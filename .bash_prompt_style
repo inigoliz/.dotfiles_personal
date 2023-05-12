@@ -23,6 +23,8 @@ function virtualenv_info {
     if [[ -n "$VIRTUAL_ENV" ]]; then
         # Strip out the path and just leave the env name
         venv="${VIRTUAL_ENV##*/}"
+    elif [[ -n "${CONDA_DEFAULT_ENV}" ]]; then
+	venv="$CONDA_DEFAULT_ENV"
     else
         venv=""
     fi
@@ -30,6 +32,7 @@ function virtualenv_info {
 }
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
+export CONDA_CHANGEPS1=false 		# avoid conda printing environment name
 VENV="\$(virtualenv_info)";
 
 
@@ -124,9 +127,8 @@ else
 fi;
 
 # Set the terminal title and prompt.
-PS1="\[${green}\]${VENV}";
+PS1="\[${green}\]${VENV} ";
 PS1+="\[\033]0;\W\007\]"; # working directory base name
-PS1+="\[${bold}\]\n"; # newline
 PS1+="\[${userStyle}\]\u"; # username
 PS1+="\[${white}\] @ ";
 PS1+="\[${hostStyle}\]\h"; # host
