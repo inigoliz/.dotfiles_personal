@@ -24,11 +24,12 @@ function virtualenv_info {
         # Strip out the path and just leave the env name
         venv="${VIRTUAL_ENV##*/}"
     elif [[ -n "${CONDA_DEFAULT_ENV}" ]]; then
-	venv="$CONDA_DEFAULT_ENV"
+        venv="${CONDA_DEFAULT_ENV}"
     else
         venv=""
     fi
-    [[ -n "$venv" ]] && echo $'\n'"($venv)"
+    
+    [[ -n "$venv" ]] && echo $"($venv) "
 }
 
 export VIRTUAL_ENV_DISABLE_PROMPT=1
@@ -127,7 +128,8 @@ else
 fi;
 
 # Set the terminal title and prompt.
-PS1="\[${green}\]${VENV} ";
+PS1="\n";
+PS1+="\[${green}\]${VENV}";
 PS1+="\[\033]0;\W\007\]"; # working directory base name
 PS1+="\[${userStyle}\]\u"; # username
 PS1+="\[${white}\] @ ";
@@ -137,7 +139,7 @@ PS1+="\[${green}\]\w"; # working directory full path
 PS1+="\$(prompt_git \"\[${white}\] on \[${violet}\]\" \"\[${blue}\]\")"; # Git repository details
 PS1+="\n";
 PS1+="\[${white}\]\$ \[${reset}\]"; # `$` (and reset color)
-PS1+="\n";
+
 export PS1;
 
 PS2="\[${yellow}\]→ \[${reset}\]";
