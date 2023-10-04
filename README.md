@@ -8,7 +8,11 @@
 [include]
   path = ~/.dotfiles_personal/.my_gitconfig
 ```
-5. Run `./.config_macos.sh` to config macOS settings.
+5. Install the Git Autocompletion executable with:
+```
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+```
+6. Run `./.config_macos.sh` to config macOS settings.
 
 **IMP: Always push changes made locally to keep them in sync here!**
 
