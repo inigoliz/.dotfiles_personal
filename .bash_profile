@@ -19,9 +19,15 @@ unset file;
 
 # -------------------------------------------- PATH Setup ----------------------------------------------------
 
-# Add '~/bin' to the '$PATH'
 export PATH="$HOME/bin:$PATH";
 export PATH="/opt/homebrew/bin:$PATH";
+# export PATH="/Users/ila/Library/Python/3.9/bin:$PATH"
+
+# ----------------------------------------------- GIT --------------------------------------------------------
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # ------------------------------------------ Extra Settings ---------------------------------------------------
 
