@@ -6,5 +6,7 @@ defaults write com.apple.dock autohide-time-modifier -float 0.5;  # duration doc
 defaults write com.apple.dock showhidden -bool true;              # traslucid hidden apps (cmd+H)
 defaults write com.apple.dock show-recents -bool true;            # show recents
 defaults write com.apple.dock show-recent-count -int 6;           # number of recents to show
+defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false # open textedit directly
+
 
 killall Dock #restart dock
