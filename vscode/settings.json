@@ -1,0 +1,67 @@
+{
+  "debug.onTaskErrors": "showErrors",
+  "explorer.confirmDelete": false,
+  "files.exclude": {
+    "**/.*": true
+  },
+  "notebook.output.textLineLimit": 100,
+  "explorer.confirmDragAndDrop": false,
+  "terminal.integrated.defaultProfile.osx": "fish",
+  "workbench.tree.indent": 18,
+  "workbench.activityBar.location": "top",
+  "material-icon-theme.folders.theme": "classic",
+  "material-icon-theme.saturation": 0.9,
+  "files.autoSave": "afterDelay",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.inheritEnv": false,
+
+
+  // Setings from https://bedes.qui.gg/writing/macos-rice
+  // vscode meta stuff
+  "workbench.startupEditor": "none",
+  "editor.accessibilitySupport": "off",
+  // text editing stuff
+  "editor.formatOnSave": false,
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.linkedEditing": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.unicodeHighlight.nonBasicASCII": false,
+  // ui stuff
+  // font
+  "editor.fontFamily": "Geist Mono, Berkeley Mono, monospace",
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.42857, // makes font size 14 have line height of ~20px
+  "apc.font.family": "Geist Mono", // apply font to ALL the UI, requires APC extension
+  // cursor
+  "editor.cursorBlinking": "smooth", // smol cursor animation, looks nice
+  "editor.cursorSmoothCaretAnimation": "on", // move cursor smoothly
+  // window
+  // title bar
+  "window.title": "${dirty}${separator}${activeEditorShort}", // hides command center at the top of the window. Use cmd+shift+p instead
+  // "workbench.layoutControl.enabled": false, // hides those little squares on the top right of the window
+  "workbench.editor.editorActionsLocation": "hidden", // hides the "format" and ellipsis buttons on the top right of the window
+  // minimap
+  "editor.minimap.renderCharacters": false, // make minimap blockish (low level of detail)
+  "editor.hideCursorInOverviewRuler": true, // don't highlight current line in scrollbar
+  "editor.minimap.autohide": true, // shows minimap only on hover
+  // sidebar
+  // "workbench.activityBar.location": "hidden", // hide sidebar icons, use cmd+b to toggle open
+  "workbench.sideBar.location": "left", // puts sidebar on the right, less disruptive (doesn't shift code if text wrap is disabled) when opening with cmd+b
+  // bottom bar
+  "workbench.statusBar.visible": false, // hide bottom bar
+  // editor
+  "editor.stickyScroll.enabled": true, // keep block name fixed at top when scrolling
+  "gitlens.mode.active": "zen", // toggle with command palette, zen mode hides gitlens stuff for when you don't need it
+  "editor.wordWrap": "on",
+  "workbench.colorTheme": "Railgun",
+  // Override theme start
+  "workbench.colorCustomizations": {
+    "editor.wordHighlightTextBorder": "#DB9833",
+    "notebook.focusedCellBorder": "#DB9833",
+    "notebook.focusedEditorBorder": "#DB9833",
+  },
+  "window.commandCenter": false,
+  "workbench.iconTheme": "chalice-icon-theme",
+  "extensions.ignoreRecommendations": true,
+  "window.confirmSaveUntitledWorkspace": false,
+}
