@@ -12,6 +12,7 @@ iTerm2 is stylized using Fish. To configure it:
 ```
 source ~/.dotfiles_personal/fish/config.fish
 ```
+3. Find the omf (OhMyFish!) themes folder and copy `fish_prompt.fish` and `fish_righ_prompt.fish`.
 
 ## Other configuration
 1. In `~/` add a `.gitconfig` with the content:
