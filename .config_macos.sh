@@ -1,3 +1,5 @@
+#!/bin/bash
+
 defaults write com.apple.dock autohide -bool true                 # autohide dock
 defaults write com.apple.dock magnification -bool true;           # dock hover magnification
 defaults write com.apple.dock tilesize -int 74;                   # dock normal icon size
