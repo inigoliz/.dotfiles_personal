@@ -11,5 +11,3 @@ defaults write com.apple.dock show-recents -bool true;            # show recents
 defaults write com.apple.dock show-recent-count -int 1;           # number of recents to show
 
 killall Dock #restart dock
-
-defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false # open textedit directly
