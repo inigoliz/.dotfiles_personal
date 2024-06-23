@@ -17,7 +17,7 @@ for file in ~/.dotfiles_personal/.{path,bash_prompt_style,exports,aliases,functi
 done;
 unset file;
 
-# -------------------------------------------- PATH Setup ----------------------------------------------------
+# -------------------------------------------- ENVIRONMENT VARS ----------------------------------------------------
 
 export PATH="/opt/homebrew/bin:$PATH";
 
