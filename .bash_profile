@@ -9,17 +9,23 @@
 
 # ------------------------------------------ Other .dotfiles --------------------------------------------------
 
-# Load the shell dotfiles, and then some:
-# * ~/.path can be used to extend `$PATH`.
-# * ~/.extra can be used for other settings you don’t want to commit.
+# Load the shell dotfiles:
+
+# ~/.path can be used to extend `$PATH`.
+# ~/.extra can be used for other settings you don’t want to commit.
+
 for file in ~/.dotfiles_personal/.{path,bash_prompt_style,exports,aliases,functions,extra,env_variables}; do
-	[ -r "$file" ] && [ -f "$file" ] && source "$file"; # man test
-done;
-unset file;
+    if [ -r "$file" ] && [ -f "$file" ]; then
+        source "$file"
+    fi
+done
 
-# -------------------------------------------- ENVIRONMENT VARS ----------------------------------------------------
+# Load local aliases that should not be logged onto git
+if [ -r ~/.aliases ] && [ -f ~/.aliases ]; then
+    source ~/.aliases
+fi
 
-export PATH="/opt/homebrew/bin:$PATH";
+unset file
 
 # ----------------------------------------------- GIT --------------------------------------------------------
 
