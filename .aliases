@@ -11,3 +11,4 @@ alias de='deactivate'
 alias ls='ls --color=always -1F'
 alias ll='ls -la'
 
+# Extra aliases that are not logged onto git might be found in ~/.aliases
