@@ -1,5 +1,5 @@
 # Dotfiles
-This repo contains the macOS setup that I do when I get a new machine.
+This repo contains the macOS setup that I like to make my machine feel cozy.
 
 > Note: May you, the curious programmer that ended up here, use it for inspiration but be warned that I don't guarantee a bug-free experience.
 
