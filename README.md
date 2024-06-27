@@ -1,9 +1,7 @@
 # Dotfiles
 This repo contains the macOS setup that I do when I get a new machine.
 
-> Note:
-> 
-> May you, the curious programmer that ended up here, use it for inspiration but be warned that I don't guarantee a bug-free experience.
+> Note: May you, the curious programmer that ended up here, use it for inspiration but be warned that I don't guarantee a bug-free experience.
 
 ## Configure Terminal
 1. In a new machine, clone this repo in `~/` and rename to `.dotfiles_personal`
