@@ -12,7 +12,7 @@ This repo contains the macOS setup that I like to make my machine feel cozy.
 ## Configure iTerm
 iTerm2 is stylized using Fish. To configure it:
 1. Install iTerm2, Fish and OhMyFish! and load the theme **neolambda**.
-2. Fild the file `ila/.config/fish/config.fish` and write the contents:
+2. Fild the file `~/.config/fish/config.fish` and write the contents:
 ```
 source ~/.dotfiles_personal/fish/config.fish
 ```
