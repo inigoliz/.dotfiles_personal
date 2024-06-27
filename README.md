@@ -9,7 +9,9 @@ This repo contains the macOS setup that I like to make my machine feel cozy.
 3. In `~/` add a `.bash_profile` with the command `source ~/.dotfiles_personal/.bash_profile;`
 4. In Terminal > Settings adjust the background color to black, font color to white and any other config you may like.
 
-![Terminal appearance](./assets/Terminal.png)
+<p align="center">
+ <img src="./assets/Terminal.png" alt="Terminal Appearance" width=90%>
+</p>
 
 ## Configure iTerm
 iTerm2 is stylized using Fish. To configure it:
