@@ -1,0 +1,35 @@
+{
+  "workbench.tree.indent": 18,
+  "workbench.activityBar.location": "top",
+  "workbench.statusBar.visible": false,       // hide bottom bar
+  "workbench.colorTheme": "Railgun",
+  "workbench.iconTheme": "vs-seti",
+  "workbench.colorCustomizations": {
+      // "editor.wordHighlightTextBorder": "#DB9833",
+      "notebook.focusedCellBorder": "#DB9833",
+      "notebook.focusedEditorBorder": "#DB9833",
+  },
+  
+  "notebook.output.textLineLimit": 100,
+
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.42857,               // height multiplier; makes font size 14 have line height of 14px*1.42=~20px
+  "editor.hover.enabled": false,              // disable hover hints
+
+  "explorer.confirmDragAndDrop": false,
+  "explorer.confirmDelete": false,
+
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1,
+  "files.exclude": {"**/.*": true},
+
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.defaultProfile.osx": "bash",
+
+  "python.createEnvironment.trigger": "off",
+
+  "debug.onTaskErrors": "showErrors",
+  "security.workspace.trust.untrustedFiles": "open",
+  
+}
