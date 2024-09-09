@@ -1,4 +1,4 @@
-# Custom aliases
+# Persisted aliases; other aliases can be found in ~/.aliases
  
 alias cd..='cd ../'                            # Go back 1 directory level
 alias ..='cd ../'                              # Go back 1 directory level
@@ -10,5 +10,3 @@ alias de='deactivate'
 
 alias ls='ls --color=always -1F'
 alias ll='ls -la'
-
-# Extra aliases that are not logged onto git might be found in ~/.aliases
