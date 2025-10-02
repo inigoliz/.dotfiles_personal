@@ -7,7 +7,11 @@ This repo contains the macOS setup that I like to make my machine feel cozy.
 1. In a new machine, clone this repo in `~/` and rename to `.dotfiles_personal`
 2. In `~/` add a `.bashrc` with the command `[ -n "$PS1" ] && source ~/.dotfiles_personal/.bash_profile;`
 3. In `~/` add a `.bash_profile` with the command `source ~/.dotfiles_personal/.bash_profile;`
-4. In Terminal > Settings adjust the background color to black, font color to white and any other config you may like.
+4. In `Terminal > Settings` in the default profile:
+   - Adjust the font to `SF Mono Regular 14`
+   - Adjust the background color to `black` with `90%` opacity and `50%` blur.
+   - Adjust the font color for `Text` and `Bold text` to white, and selection to `#755337`.
+   - Adjust the window to `80 columns` and `30 rows`.
 
 <p align="center">
  <img src="./assets/Terminal.png" alt="Terminal Appearance" width=90%>
