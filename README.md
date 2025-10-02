@@ -15,7 +15,7 @@ This repo contains the macOS setup that I like to make my machine feel cozy.
    - Adjust the light blue ANSI color to `#FFB500` (orange).
 
 <p align="center">
- <img src="./assets/Terminal.png" alt="Terminal Appearance" width=90%>
+ <img src="https://github.com/user-attachments/assets/387afc2f-b0ba-4e2b-a967-e26f962afa3a" alt="Terminal Appearance" width=90%>
 </p>
 
 ## Configure iTerm
