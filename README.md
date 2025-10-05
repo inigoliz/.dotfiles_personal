@@ -28,8 +28,13 @@ source ~/.dotfiles_personal/fish/config.fish
 3. Find the omf (OhMyFish!) themes folder and copy `fish_prompt.fish` and `fish_righ_prompt.fish`.
 
 ## Configure VSCode
-1. Install theme `Railgun` and file icon theme `Chalice`.
-2. In VSCode, launch the command `>Open User Settings (JSON)` and copy the contents of `vscode/settings.json`.
+The settings file has to be symlinked so that VSCode uses the one in this repo:
+- VSCode settings file: `~/Library/Application Support/Code/User/settings.json`
+
+```
+ln -s ~/.dotfiles_personal/vscode/settings.json \
+~/Library/Application Support/Code/User/
+```
 
 ## Other configuration
 1. In `~/` add a `.gitconfig` with the content:
