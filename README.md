@@ -31,10 +31,12 @@ source ~/.dotfiles_personal/fish/config.fish
 The settings file has to be symlinked so that VSCode uses the one in this repo:
 - VSCode settings file: `~/Library/Application Support/Code/User/settings.json`
 
+```bash
+ln -s ~/.dotfiles_personal/vscode/settings.json ~/Library/Application\ Support/Code/User/
 ```
-ln -s ~/.dotfiles_personal/vscode/settings.json \
-~/Library/Application Support/Code/User/
-```
+
+<img width="1015" height="468" alt="image" src="https://github.com/user-attachments/assets/a2d97d87-f454-4e26-8d40-0c68236f8965" />
+
 
 ## Other configuration
 1. In `~/` add a `.gitconfig` with the content:
