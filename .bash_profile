@@ -50,7 +50,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-conda config --set auto_activate false
+conda config --set auto_activate_base false
 conda config --set changeps1 false
 
 # ------------------------------------------ Extra Settings ---------------------------------------------------
