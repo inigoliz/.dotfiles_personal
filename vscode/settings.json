@@ -54,5 +54,6 @@
     "git.openRepositoryInParentFolders": "always",
     "workbench.editor.empty.hint": "hidden",
     "notebook.diff.experimental.toggleInline": true,
-    "raspberry-pi-pico.python3Path": "/opt/homebrew/bin/python3"
+    "raspberry-pi-pico.python3Path": "/opt/homebrew/bin/python3",
+    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniconda/base/envs/neucom/bin/python"
   }
