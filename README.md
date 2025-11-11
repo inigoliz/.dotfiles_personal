@@ -12,7 +12,7 @@ This repo contains the macOS setup that I like to make my machine feel cozy.
    - Adjust the background color to `black` with `90%` opacity and `50%` blur.
    - Adjust the font color for `Text` and `Bold text` to white, and selection to `#755337`.
    - Adjust the window to `80 columns` and `30 rows`.
-   - Adjust the light blue ANSI color to `#FFB500` (orange).
+   - Adjust the 'ANSI blue' color to `#FFB500` (orange).
 
 <p align="center">
  <img src="https://github.com/user-attachments/assets/990efe93-044b-4aaf-a79d-c0f41192c70c" alt="Terminal Appearance" width=90%>
