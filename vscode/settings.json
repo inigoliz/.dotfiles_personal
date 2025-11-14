@@ -25,6 +25,8 @@
     "terminal.integrated.defaultProfile.osx": "bash",
   
     "python.createEnvironment.trigger": "off",
+    "python.analysis.typeCheckingMode": "standard",
+    "notebook.diff.experimental.toggleInline": true,
   
     "debug.onTaskErrors": "showErrors",
     "security.workspace.trust.untrustedFiles": "open",
@@ -35,17 +37,12 @@
     "editor.inlineSuggest.showToolbar": "never",
     "editor.quickSuggestionsDelay": 300,
     "editor.suggest.matchOnWordStartOnly": false,
-    "files.exclude": {
-        "**/__pycache__": true
-    },
-    "C_Cpp.default.compilerPath": "/usr/bin/gcc",
+    "files.exclude": {"**/__pycache__": true},
     "extensions.ignoreRecommendations": true,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
     "chat.commandCenter.enabled": false,
-    "editor.defaultFormatter": "ms-python.black-formatter",
     "editor.formatOnSave": true,
     "window.title": "${dirty}${activeEditorShort}${separator}${folderPath}",
-    "python.analysis.typeCheckingMode": "standard",
     "editor.rulers": [88,],
     "workbench.sideBar.location": "right",
     "editor.allowVariableFontsInAccessibilityMode": true,
@@ -53,7 +50,4 @@
     "editor.fontFamily": "Google Sans Code, Menlo, Monaco, 'Courier New', monospace",
     "git.openRepositoryInParentFolders": "always",
     "workbench.editor.empty.hint": "hidden",
-    "notebook.diff.experimental.toggleInline": true,
-    "raspberry-pi-pico.python3Path": "/opt/homebrew/bin/python3",
-    "python.defaultInterpreterPath": "/opt/homebrew/Caskroom/miniconda/base/envs/neucom/bin/python"
   }
