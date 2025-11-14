@@ -37,6 +37,9 @@ ln -s ~/.dotfiles_personal/vscode/settings.json ~/Library/Application\ Support/C
 
 <img width="1015" height="468" alt="image" src="https://github.com/user-attachments/assets/a2d97d87-f454-4e26-8d40-0c68236f8965" />
 
+Requirements:
+- Railgun theme
+
 
 ## Other configuration
 1. In `~/` add a `.gitconfig` with the content:
