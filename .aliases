@@ -11,3 +11,5 @@ alias de='deactivate'
 alias ls='ls --color=always -1F'
 alias ll='ls -la'
 alias noise='play -c 2 -n synth pinknoise mix synth sine amod 0.07 90 band -n 2000 1q vol 0.9'
+
+alias grep='grep --color=always'
