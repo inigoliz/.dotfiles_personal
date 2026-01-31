@@ -54,8 +54,7 @@ conda config --set auto_activate false
 conda config --set changeps1 false
 
 # ------------------------------------------ Brew ---------------------------------------------------
-HOMEBREW_NO_AUTO_UPDATE=1
-
+export HOMEBREW_AUTO_UPDATE_SECS=1296000  # Every 15 days
 # ------------------------------------------ Extra Settings ---------------------------------------------------
 # Case-insensitive name expansion (globbing) (used in pathname expansion)
 shopt -s nocaseglob;
