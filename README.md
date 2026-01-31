@@ -40,6 +40,11 @@ ln -s ~/.dotfiles_personal/vscode/settings.json ~/Library/Application\ Support/C
 Requirements:
 - Railgun theme
 
+## Configure vim
+Link config to the one in this repo:
+```
+ln -s ~/.dotfiles_personal/.vimrc ~/.vimrc
+```
 
 ## Other configuration
 1. In `~/` add a `.gitconfig` with the content:
