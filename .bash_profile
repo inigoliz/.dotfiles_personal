@@ -7,6 +7,10 @@
 # check '~/<DOTFILES_LOCATION>/.bash_prompt' for the concrete bash style configurations
 # check '~/<DOTFILES_LOCATION>/.aliases' for the aliases set up
 
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LC_CTYPE=en_US.UTF-8
+
 # ------------------------------------------ Other .dotfiles --------------------------------------------------
 
 # Load the shell dotfiles:
