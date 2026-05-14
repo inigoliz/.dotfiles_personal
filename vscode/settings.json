@@ -1,6 +1,5 @@
 {
-    "workbench.tree.indent": 18,
-    "workbench.activityBar.location": "top", // hide bottom bar
+    "workbench.tree.indent": 18, // hide bottom bar
     "workbench.colorTheme": "Railgun",
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#3d393a",
@@ -50,4 +49,8 @@
     "rust-analyzer.completion.autoimport.enable": false,
     "rust-analyzer.checkOnSave": false,
     "rust-analyzer.check.command": "clippy",
+    "claudeCode.preferredLocation": "panel",
+    "workbench.activityBar.location": "top",
+    "chat.disableAIFeatures": true,
+    "liveServer.settings.donotShowInfoMsg": true,
 }
