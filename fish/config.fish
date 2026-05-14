@@ -1,9 +1,7 @@
 set -x VIRTUAL_ENV_DISABLE_PROMPT 0
 
-function fish_greeting # requires: brew install fortune
-    echo (set_color brblue)
-    fortune
-    echo (set_color white)
+# Keep empty to remove default greeting
+function fish_greeting
 end
 
 # Aliases (ported from ~/.dotfiles_personal/.aliases)
