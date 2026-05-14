@@ -1,18 +1,24 @@
-# Environment variables
-export VIRTUAL_ENV_DISABLE_PROMPT=0
-export PATH="/Users/ila/Library/Python/3.9/bin:$PATH"
-export PYTHONPATH="/Users/ila/Developer/teenygrad:$PYTHONPATH"
-export PYTHONPATH="/Users/ila/Developer/tinygrad:$PYTHONPATH"
+set -x VIRTUAL_ENV_DISABLE_PROMPT 0
 
-# Other initialization
-function fish_greeting
+function fish_greeting # requires: brew install fortune
     echo (set_color brblue)
     fortune
     echo (set_color white)
 end
 
+# Aliases (ported from ~/.dotfiles_personal/.aliases)
+alias cd.. 'cd ../'
+alias .. 'cd ../'
+alias ... 'cd ../../'
+alias .3 'cd ../../../'
+alias .4 'cd ../../../../'
+alias de deactivate
+alias ls 'ls --color=always -1F'
+alias ll 'ls -la'
+alias noise 'play -c 2 -n synth pinknoise mix synth sine amod 0.07 90 band -n 2000 1q vol 0.9'
+alias grep 'grep --color=always'
+
 if status is-interactive
-    # Commands to run in interactive sessions can go here
 end
 
 # >>> conda initialize >>>

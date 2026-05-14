@@ -18,14 +18,30 @@ This repo contains the macOS setup that I like to make my machine feel cozy.
  <img src="https://github.com/user-attachments/assets/990efe93-044b-4aaf-a79d-c0f41192c70c" alt="Terminal Appearance" width=90%>
 </p>
 
-## Configure iTerm
-iTerm2 is stylized using Fish. To configure it:
-1. Install iTerm2, Fish and OhMyFish! and load the theme **neolambda**.
-2. Fild the file `~/.config/fish/config.fish` and write the contents:
+## Configure Ghostty + Fish
+Ghostty is configured with Fish as the default shell, using a custom Solarized Dark-inspired prompt.
+
+1. Install Ghostty, Fish and fortune:
+```bash
+brew install fish fortune
 ```
-source ~/.dotfiles_personal/fish/config.fish
+2. Symlink the Fish config and prompt functions:
+```bash
+mkdir -p ~/.config/fish/functions
+
+ln -s ~/.dotfiles_personal/fish/config.fish ~/.config/fish/config.fish
+ln -s ~/.dotfiles_personal/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
+ln -s ~/.dotfiles_personal/fish/functions/fish_right_prompt.fish ~/.config/fish/functions/fish_right_prompt.fish
 ```
-3. Find the omf (OhMyFish!) themes folder and copy `fish_prompt.fish` and `fish_righ_prompt.fish`.
+3. Symlink the Ghostty config:
+```bash
+mkdir -p ~/.config/ghostty
+ln -s ~/.dotfiles_personal/ghostty/config ~/.config/ghostty/config
+```
+4. Initialize conda for Fish (if using conda):
+```bash
+conda init fish
+```
 
 ## Configure VSCode
 The settings file has to be symlinked so that VSCode uses the one in this repo:

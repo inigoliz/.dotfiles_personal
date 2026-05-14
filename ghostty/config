@@ -1,0 +1,46 @@
+# Font
+font-family = Google Sans Code
+font-size = 15
+
+# Window
+window-height = 30
+window-width = 120
+window-padding-x = 4
+window-padding-y = 4
+window-padding-balance = true
+window-theme = dark
+window-save-state = always
+
+# Background
+background = 000000
+foreground = ffffff
+background-opacity = 0.98
+background-blur = 20
+
+# Selection (from Terminal.app: #755337)
+selection-background = 755337
+selection-foreground = ffffff
+
+# Palette overrides
+# ANSI blue (#4) remapped to orange, matching your Terminal.app config
+palette = 4=#FFB500
+palette = 12=#FFB500
+
+# macOS-specific
+macos-titlebar-style = transparent
+macos-option-as-alt = true
+
+# Fish shell
+command = /opt/homebrew/bin/fish -l
+shell-integration = fish
+
+# Bash shell
+#command = /bin/bash -l
+#shell-integration = detect
+
+shell-integration-features = no-cursor
+
+# Behavior
+confirm-close-surface = true
+mouse-hide-while-typing = true
+copy-on-select = true
