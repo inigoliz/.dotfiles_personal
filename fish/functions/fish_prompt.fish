@@ -27,7 +27,7 @@ function fish_prompt
 
     echo -n $user_color$USER
     echo -n $white" in "
-    echo -n $green(pwd)
+    echo -n $green(prompt_pwd --dir-length=0)
 
     # Git status (matching bash: branch [+!?$])
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1

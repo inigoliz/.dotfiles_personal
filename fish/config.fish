@@ -4,17 +4,15 @@ set -x VIRTUAL_ENV_DISABLE_PROMPT 0
 function fish_greeting
 end
 
-# Aliases (ported from ~/.dotfiles_personal/.aliases)
-alias cd.. 'cd ../'
-alias .. 'cd ../'
-alias ... 'cd ../../'
-alias .3 'cd ../../../'
-alias .4 'cd ../../../../'
-alias de deactivate
-alias ls 'ls --color=always -1F'
-alias ll 'ls -la'
-alias noise 'play -c 2 -n synth pinknoise mix synth sine amod 0.07 90 band -n 2000 1q vol 0.9'
-alias grep 'grep --color=always'
+# Committed aliases
+if test -r ~/.dotfiles_personal/.aliases
+    source ~/.dotfiles_personal/.aliases
+end
+
+# Local non-committed aliases
+if test -r ~/.aliases
+    source ~/.aliases
+end
 
 if status is-interactive
 end
