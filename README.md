@@ -43,6 +43,11 @@ ln -s ~/.dotfiles_personal/ghostty/config ~/.config/ghostty/config
 conda init fish
 ```
 
+5. Remove the 'Last login ...' message:
+```bash
+touch ~/.hushlogin
+```
+
 ## Configure VSCode
 The settings file has to be symlinked so that VSCode uses the one in this repo:
 - VSCode settings file: `~/Library/Application Support/Code/User/settings.json`
