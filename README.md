@@ -1,7 +1,7 @@
 # Dotfiles
 This repo contains the macOS setup that I like to make my machine feel cozy.
 
-> Note: May you, the curious programmer that ended up here, use it for inspiration but be warned that I don't guarantee a bug-free experience.
+> **Note:** May *you*, the curious wanderer who ended up here, use it for inspiration. But be warned that it comes at your very own responsibility.
 
 ## Configure Ghostty (zsh)
 Ghostty is configured with Fish as the default shell, using a custom Solarized Dark-inspired prompt.
@@ -23,6 +23,8 @@ ln -s ~/.dotfiles/ghostty/config ~/.config/ghostty/config
 ```bash
 touch ~/.hushlogin
 ```
+
+<img width="854" height="532" alt="image" src="https://github.com/user-attachments/assets/ee4a1153-c295-4653-aba5-8b32a9b9edfe" />
 
 ## Configure Terminal (bash)
 1. Clone this repo in `~/` in a new machine
@@ -65,6 +67,9 @@ Link config to the one in this repo:
 ```
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ```
+
+<img width="854" height="532" alt="image" src="https://github.com/user-attachments/assets/5d4598b7-b582-4a39-9d7d-845277222df7" />
+
 
 ## Other configuration
 1. In `~/` add a `.gitconfig` with the content:
