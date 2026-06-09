@@ -18,18 +18,25 @@ function fish_prompt
 
     echo
 
-    # Conda / virtualenv
+    # Conda / virtualenv prefix (computed but printed after width calc)
+    set -l env_prefix ""
     if set -q CONDA_DEFAULT_ENV
-        echo -n $green"($CONDA_DEFAULT_ENV) "
+        set env_prefix "($CONDA_DEFAULT_ENV) "
     else if set -q VIRTUAL_ENV
-        echo -n $green"("(basename $VIRTUAL_ENV)") "
+        set env_prefix "("(basename $VIRTUAL_ENV)") "
     end
 
-    echo -n $user_color$USER
-    echo -n $white" in "
-    echo -n $green(prompt_pwd --dir-length=0)
+    # Path with ~ substitution for $HOME
+    set -l path_display $PWD
+    if string match -q -- "$HOME" $PWD
+        set path_display '~'
+    else if string match -q -- "$HOME/*" $PWD
+        set path_display '~'(string sub -s (math (string length -- $HOME) + 1) -- $PWD)
+    end
 
-    # Git status (matching bash: branch [+!?$])
+    # Git suffix (build plain + colored versions; plain is for width math)
+    set -l git_plain ""
+    set -l git_colored ""
     if git rev-parse --is-inside-work-tree >/dev/null 2>&1
         set -l branch (git symbolic-ref --quiet --short HEAD 2>/dev/null
                         or git describe --all --exact-match HEAD 2>/dev/null
@@ -54,7 +61,34 @@ function fish_prompt
             set dirty " [$dirty]"
         end
 
-        echo -n $white" on "$violet$branch$blue$dirty
+        set git_plain " on $branch$dirty"
+        set git_colored $white" on "$violet$branch$blue$dirty
+    end
+
+    # Truncate the middle of the path if the line would overflow the terminal.
+    # Only the path is shortened — username, " in ", and git suffix stay intact.
+    set -l cols $COLUMNS
+    if test -z "$cols"; or test "$cols" -le 0
+        set cols 80
+    end
+    set -l fixed (string length -- "$env_prefix$USER in $git_plain")
+    set -l avail (math $cols - $fixed)
+    set -l plen (string length -- $path_display)
+    if test $avail -ge 8; and test $plen -gt $avail
+        set -l keep (math $avail - 3)
+        set -l left (math --scale=0 $keep / 2)
+        set -l right (math $keep - $left)
+        set path_display (string sub -l $left -- $path_display)"..."(string sub -s (math $plen - $right + 1) -- $path_display)
+    end
+
+    if test -n "$env_prefix"
+        echo -n $green$env_prefix
+    end
+    echo -n $user_color$USER
+    echo -n $white" in "
+    echo -n $green$path_display
+    if test -n "$git_colored"
+        echo -n $git_colored
     end
 
     echo

@@ -30,9 +30,13 @@ palette = 12=#FFB500
 macos-titlebar-style = transparent
 macos-option-as-alt = true
 
+# Zsh shell
+command = /bin/zsh -l
+shell-integration = zsh
+
 # Fish shell
-command = /opt/homebrew/bin/fish -l
-shell-integration = fish
+#command = /opt/homebrew/bin/fish -l
+#shell-integration = fish
 
 # Bash shell
 #command = /bin/bash -l

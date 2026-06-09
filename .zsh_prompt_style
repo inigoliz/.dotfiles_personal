@@ -1,0 +1,51 @@
+setopt PROMPT_SUBST
+
+# Print the active virtualenv / conda environment, if any.
+virtualenv_info() {
+    local venv=""
+    if [[ -n "$VIRTUAL_ENV" ]]; then
+        venv="${VIRTUAL_ENV##*/}"
+    elif [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+        venv="$CONDA_DEFAULT_ENV"
+    fi
+    [[ -n "$venv" ]] && echo "($venv) "
+}
+
+# Print the current git branch and a compact dirty-state indicator.
+prompt_git() {
+    local s='' branchName='' repoUrl=''
+    git rev-parse --is-inside-work-tree &>/dev/null || return
+
+    branchName="$(git symbolic-ref --quiet --short HEAD 2>/dev/null || \
+        git describe --all --exact-match HEAD 2>/dev/null || \
+        git rev-parse --short HEAD 2>/dev/null || \
+        echo '(unknown)')"
+
+    repoUrl="$(git config --get remote.origin.url)"
+    if grep -q 'chromium/src.git' <<< "$repoUrl"; then
+        s+='*'
+    else
+        git diff --quiet --ignore-submodules --cached || s+='+'
+        git diff-files --quiet --ignore-submodules -- || s+='!'
+        [ -n "$(git ls-files --others --exclude-standard)" ] && s+='?'
+        git rev-parse --verify refs/stash &>/dev/null && s+='$'
+    fi
+
+    [ -n "$s" ] && s=" [$s]"
+    echo "${1}${branchName}${2}${s}"
+}
+
+# Solarized colors (256): orange=166 green=71 white=15 violet=61 blue=153 yellow=228
+PROMPT=$'\n'
+PROMPT+='%F{71}$(virtualenv_info)%f'
+PROMPT+='%F{166}%n%f'                                   # username
+PROMPT+='%F{15} in %f'
+PROMPT+='%F{71}%~%f'                                    # working directory
+PROMPT+='$(prompt_git " %F{15}on %F{61}" "%F{153}")%f'  # git branch + status
+PROMPT+=$'\n'
+PROMPT+='%F{15}$ %f'
+
+PROMPT2='%F{228}→ %f'
+
+# Set the terminal title to the current directory basename.
+precmd() { print -Pn "\e]0;%1~\a"; }
