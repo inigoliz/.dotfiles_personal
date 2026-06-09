@@ -24,7 +24,9 @@ ln -s ~/.dotfiles/ghostty/config ~/.config/ghostty/config
 touch ~/.hushlogin
 ```
 
-<img width="854" height="532" alt="image" src="https://github.com/user-attachments/assets/7b5b9808-4876-49ce-8854-0d718160bc40" />
+<p align="center">
+  <img width="854" height="532" alt="image" src="https://github.com/user-attachments/assets/7b5b9808-4876-49ce-8854-0d718160bc40" />
+</p>
 
 ## Configure Terminal (bash)
 1. Clone this repo in `~/` in a new machine
@@ -45,7 +47,9 @@ source ~/.dotfiles/.bash_profile;
    - Adjust the window to `80 columns` and `30 rows`.
    - Adjust the 'ANSI blue' color to `#FFB500` (orange).
 
-<img width="744" height="516" alt="image" src="https://github.com/user-attachments/assets/c6b5e3a7-e1c5-45ce-a04d-1d4e69ffeec5" />
+<p align="center">
+  <img width="744" height="516" alt="image" src="https://github.com/user-attachments/assets/c6b5e3a7-e1c5-45ce-a04d-1d4e69ffeec5" />
+</p>
 
 ## Configure VSCode
 The settings file has to be symlinked so that VSCode uses the one in this repo:
@@ -54,7 +58,9 @@ The settings file has to be symlinked so that VSCode uses the one in this repo:
 ```bash
 ln -s ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/
 ```
-<img width="830" height="445" alt="image" src="https://github.com/user-attachments/assets/d6df8740-be61-409b-b7ff-3cb4b7d04a39" />
+<p align="center">
+  <img width="830" height="445" alt="image" src="https://github.com/user-attachments/assets/d6df8740-be61-409b-b7ff-3cb4b7d04a39" />
+</p>
 
 Requirements:
 - Railgun theme
@@ -65,7 +71,9 @@ Link config to the one in this repo:
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ```
 
-<img width="703" height="404" alt="image" src="https://github.com/user-attachments/assets/c86c66c1-e4b9-4d6b-a788-93367dcb1c2e" />
+<p align="center">
+  <img width="703" height="404" alt="image" src="https://github.com/user-attachments/assets/c86c66c1-e4b9-4d6b-a788-93367dcb1c2e" />
+</p>
 
 ## Other configuration
 1. In `~/` add a `.gitconfig` with the content:
