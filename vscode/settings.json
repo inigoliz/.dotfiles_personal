@@ -15,7 +15,7 @@
     "files.autoSaveDelay": 1,
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.inheritEnv": false,
-    "terminal.integrated.defaultProfile.osx": "bash",
+    "terminal.integrated.defaultProfile.osx": "zsh",
     "python.createEnvironment.trigger": "off",
     "python.analysis.typeCheckingMode": "standard",
     "notebook.diff.experimental.toggleInline": true,

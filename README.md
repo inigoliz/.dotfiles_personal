@@ -3,7 +3,28 @@ This repo contains the macOS setup that I like to make my machine feel cozy.
 
 > Note: May you, the curious programmer that ended up here, use it for inspiration but be warned that I don't guarantee a bug-free experience.
 
-## Configure Terminal
+## Configure Ghostty (zsh)
+Ghostty is configured with Fish as the default shell, using a custom Solarized Dark-inspired prompt.
+
+1. Install Ghostty and syntax tools:
+```bash
+brew install ghostty zsh-syntax-highlighting zsh-autosuggestions
+```
+
+2. Symlink the Ghostty config:
+```bash
+mkdir -p ~/.config/ghostty
+ln -s ~/.dotfiles/ghostty/config ~/.config/ghostty/config
+```
+
+> **IMP:** In `ghostty/config`, uncomment the section corresponding to `zsh`.
+
+5. Remove the 'Last login ...' message:
+```bash
+touch ~/.hushlogin
+```
+
+## Configure Terminal (bash)
 1. Clone this repo in `~/` in a new machine
 2. Add `~/.bashrc` with the following contents:
 ```bash
@@ -25,36 +46,6 @@ source ~/.dotfiles/.bash_profile;
 <p align="center">
  <img src="https://github.com/user-attachments/assets/990efe93-044b-4aaf-a79d-c0f41192c70c" alt="Terminal Appearance" width=90%>
 </p>
-
-## Configure Ghostty + Fish
-Ghostty is configured with Fish as the default shell, using a custom Solarized Dark-inspired prompt.
-
-1. Install Ghostty, Fish and fortune:
-```bash
-brew install fish fortune
-```
-2. Symlink the Fish config and prompt functions:
-```bash
-mkdir -p ~/.config/fish/functions
-
-ln -s ~/.dotfiles/fish/config.fish ~/.config/fish/config.fish
-ln -s ~/.dotfiles/fish/functions/fish_prompt.fish ~/.config/fish/functions/fish_prompt.fish
-ln -s ~/.dotfiles/fish/functions/fish_right_prompt.fish ~/.config/fish/functions/fish_right_prompt.fish
-```
-3. Symlink the Ghostty config:
-```bash
-mkdir -p ~/.config/ghostty
-ln -s ~/.dotfiles/ghostty/config ~/.config/ghostty/config
-```
-4. Initialize conda for Fish (if using conda):
-```bash
-conda init fish
-```
-
-5. Remove the 'Last login ...' message:
-```bash
-touch ~/.hushlogin
-```
 
 ## Configure VSCode
 The settings file has to be symlinked so that VSCode uses the one in this repo:

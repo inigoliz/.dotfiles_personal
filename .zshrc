@@ -112,9 +112,6 @@ zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*:descriptions' format '%F{166}%d%f'
 
-# jujutsu completion (matches the bash setup)
-command -v jj >/dev/null 2>&1 && source <(jj util completion zsh)
-
 # ------------------------- Fish-like interactive plugins -----------------------
 # Gray inline suggestion from history (accept with → / End).
 source /opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh 2>/dev/null
