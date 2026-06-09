@@ -54,8 +54,7 @@ The settings file has to be symlinked so that VSCode uses the one in this repo:
 ```bash
 ln -s ~/.dotfiles/vscode/settings.json ~/Library/Application\ Support/Code/User/
 ```
-
-<img width="1015" height="468" alt="image" src="https://github.com/user-attachments/assets/a2d97d87-f454-4e26-8d40-0c68236f8965" />
+<img width="830" height="445" alt="image" src="https://github.com/user-attachments/assets/d6df8740-be61-409b-b7ff-3cb4b7d04a39" />
 
 Requirements:
 - Railgun theme
@@ -66,7 +65,7 @@ Link config to the one in this repo:
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ```
 
-<img width="979" height="589" alt="image" src="https://github.com/user-attachments/assets/194f68be-c318-41e8-8372-a9451f9554ca" />
+<img width="703" height="404" alt="image" src="https://github.com/user-attachments/assets/c86c66c1-e4b9-4d6b-a788-93367dcb1c2e" />
 
 ## Other configuration
 1. In `~/` add a `.gitconfig` with the content:
