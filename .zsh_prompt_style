@@ -35,13 +35,74 @@ prompt_git() {
     echo "${1}${branchName}${2}${s}"
 }
 
+# Build a jj template expression that searches up to $1 generations above @ for
+# the nearest commit carrying a local bookmark, rendered as "name~N" (N = how
+# many commits up it sits). Evaluates to an empty string if none is found within
+# the bound. jj templates can't recurse, so the levels are unrolled here; we
+# build the nesting with a loop to keep this readable.
+__jj_build_nearest_bm_template() {
+    local depth=${1:-10} i k src body expr="coalesce("
+    for (( i = 1; i <= depth; i++ )); do
+        body="if(p${i}.local_bookmarks(), p${i}.local_bookmarks() ++ \" [@${i}]\")"
+        for (( k = i; k >= 1; k-- )); do
+            if (( k == 1 )); then src="self"; else src="p$((k - 1))"; fi
+            body="${src}.parents().map(|p${k}| ${body}).join(\"\")"
+        done
+        expr+="${body},"
+    done
+    expr+="\"\")"
+    printf '%s' "$expr"
+}
+
+# Precompute once at load time: the nearest-bookmark sub-template (bounded to 10
+# generations) and the full prompt template (bookmark-or-ancestor, capped
+# description). coalesce() prefers @'s own bookmark, then the nearest bookmarked
+# ancestor; empty means nothing within range.
+__JJ_NEAREST_BM_TEMPLATE="$(__jj_build_nearest_bm_template 10)"
+__JJ_PROMPT_TEMPLATE='coalesce(if(local_bookmarks, local_bookmarks.join(" ") ++ " [@]"), '"$__JJ_NEAREST_BM_TEMPLATE"') ++ "\t" ++ if(description, if(description.first_line().len() > 20, description.first_line().substr(0, 20) ++ "…", description.first_line()))'
+
+# Print the current jujutsu change: either @'s own bookmark, the nearest
+# bookmarked ancestor as "name~N" (within 10 commits), or "no bookmark in close
+# parents" if none is near; plus the first line of the description capped at 20
+# chars. Uses --ignore-working-copy so the prompt never snapshots the working
+# copy.
+prompt_jj() {
+    command -v jj >/dev/null 2>&1 || return 1
+
+    local out
+    out="$(jj log --no-graph --ignore-working-copy --color never -r @ \
+        -T "$__JJ_PROMPT_TEMPLATE" 2>/dev/null)" || return 1
+
+    local bm desc
+    bm="${out%%$'\t'*}"
+    desc="${out#*$'\t'}"
+    # Neutralize any '%' in commit text so it isn't read as a prompt escape.
+    bm="${bm//\%/%%}"
+    desc="${desc//\%/%%}"
+
+    local out_str=" %F{15}on%f"
+    if [ -n "$bm" ]; then
+        out_str+=" %F{153}${bm}"
+    else
+        out_str+=" %F{244}no bookmark in close parents"
+    fi
+    [ -n "$desc" ] && out_str+=" %F{244}${desc}"
+    echo "${out_str}%f"
+}
+
+# Prefer jujutsu; fall back to git. In colocated (git+jj) repos jj wins.
+prompt_vcs() {
+    prompt_jj && return
+    prompt_git " %F{15}on %F{61}" "%F{153}"
+}
+
 # Solarized colors (256): orange=166 green=71 white=15 violet=61 blue=153 yellow=228
 PROMPT=$'\n'
 PROMPT+='%F{71}$(virtualenv_info)%f'
 PROMPT+='%F{166}%n%f'                                   # username
 PROMPT+='%F{15} in %f'
 PROMPT+='%F{71}%~%f'                                    # working directory
-PROMPT+='$(prompt_git " %F{15}on %F{61}" "%F{153}")%f'  # git branch + status
+PROMPT+='$(prompt_vcs)%f'                               # jj change/bookmark/desc, else git
 PROMPT+=$'\n'
 PROMPT+='%F{15}$ %f'
 
